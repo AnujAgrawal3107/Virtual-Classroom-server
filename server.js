@@ -45,14 +45,8 @@ app.set('view engine', 'ejs');
 //   res.setHeader('Access-Control-Allow-Credentials', 'true');
 //   next();
 // });
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://virtual-classroom-server-yump.onrender.com');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
-  next();
-});
 
+app.use(cors());
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
